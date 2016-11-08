@@ -1,27 +1,28 @@
-package rocks.jahn.tinysmsgate;
+package com.ks.tinysmsgate;
 
-import rocks.jahn.smsgate.R;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 
+/**
+ * Created by shadk on 08.11.2016.
+ */
+
 public class Preferences extends PreferenceActivity {
-	@Override
+    @Override
     public void onCreate(Bundle savedInstanceState) {
-	    super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);
         getFragmentManager()
-        	.beginTransaction()
-        		.replace(android.R.id.content, new SMSGatePreferenceFragment())
-        	.commit();
-	}
-	
+                .beginTransaction()
+                .replace(android.R.id.content, new SMSGatePreferenceFragment())
+                .commit();
+    }
 
 
-    public static class SMSGatePreferenceFragment extends PreferenceFragment
-    {
+
+    public static class SMSGatePreferenceFragment extends PreferenceFragment {
         @Override
-        public void onCreate(final Bundle savedInstanceState)
-        {
+        public void onCreate(final Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.smsgate_preferences);
         }
